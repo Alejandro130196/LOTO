@@ -1,0 +1,189 @@
+/* --- VARIABLES CORPORATIVAS CERÁMICA MAYOR --- */
+:root {
+  --primary-color: #0f172a;    /* Azul pizarra oscuro ejecutivo */
+  --secondary-color: #1e3a8a;  /* Azul industrial */
+  --accent-orange: #c2410c;    /* Naranja advertencia/terracota */
+  --bg-light: #f8fafc;         /* Gris claro para fondos */
+  --border-color: #cbd5e1;     /* Gris para bordes */
+  --text-dark: #334155;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text-dark);
+  background-color: #e2e8f0;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- ESTILOS ENTORNO WEB DE TRABAJO --- */
+.corp-header {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 15px 30px;
+  border-bottom: 4px solid var(--accent-orange);
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.logo-placeholder {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  border: 2px solid #fff;
+  padding: 5px 10px;
+  margin-right: 20px;
+  background-color: var(--accent-orange);
+}
+.header-title h1 { margin: 0; font-size: 20px; font-weight: 700; }
+.header-title p { margin: 3px 0 0 0; font-size: 12px; color: #94a3b8; }
+
+.app-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+.editor-panel {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+.editor-panel h2 {
+  font-size: 16px;
+  color: var(--primary-color);
+  margin-top: 0;
+  border-bottom: 2px solid var(--bg-light);
+  padding-bottom: 8px;
+}
+
+.form-group {
+  display: inline-block;
+  width: 31%;
+  margin-right: 2%;
+  margin-bottom: 15px;
+}
+.form-group:last-of-type { margin-right: 0; }
+.form-group label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 5px; }
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.table-actions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.btn {
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+}
+.btn-primary { background-color: var(--secondary-color); color: white; }
+.btn-success { background-color: #16a34a; color: white; }
+.btn-danger { background-color: #dc2626; color: white; padding: 4px 8px; font-size: 11px; }
+.btn-large { width: 100%; padding: 12px; font-size: 15px; margin-top: 15px; }
+
+.table-responsive { overflow-x: auto; margin-top: 10px; }
+.editor-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 13px; }
+.editor-table th, .editor-table td { padding: 10px; border-bottom: 1px solid var(--border-color); }
+.editor-table th { background-color: var(--bg-light); font-weight: 600; }
+.editor-table input, .editor-table select {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* --- MAQUETACIÓN DE LA HOJA DIN A4 EN PANTALLA --- */
+.a4-preview-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+.a4-page {
+  background: white;
+  width: 210mm;
+  min-height: 297mm;
+  padding: 15mm;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-sizing: border-box;
+}
+
+/* --- ESTILOS VISUALES DE LA FICHA INTERNA (VISTA IMPRESIÓN) --- */
+.loto-table-header { width: 100%; border-collapse: collapse; border: 2px solid #000; }
+.loto-table-header td { border: 1px solid #000; padding: 8px; text-align: center; vertical-align: middle; }
+.logo-text-bold { font-weight: 900; font-size: 16px; letter-spacing: 1px; line-height: 1.1; color: var(--primary-color); }
+.td-title h2 { margin: 0; font-size: 16px; font-weight: 800; color: #000; }
+.td-subtitle { font-size: 12px; font-weight: 700; color: #475569; background: #f1f5f9; }
+.td-meta { font-size: 11px; text-align: left !important; }
+
+.loto-section-title {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 15px;
+  letter-spacing: 0.5px;
+}
+
+.loto-info-table { width: 100%; border-collapse: collapse; margin-top: 5px; }
+.loto-info-table td { border: 1px solid var(--border-color); padding: 6px; font-size: 12px; }
+
+.loto-alert-box {
+  border: 2px dashed var(--accent-orange);
+  background-color: #fff7ed;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 4px;
+}
+.loto-alert-box p { margin: 0; font-size: 11px; line-height: 1.4; color: #7c2d12; }
+
+.loto-points-table { width: 100%; border-collapse: collapse; margin-top: 5px; }
+.loto-points-table th, .loto-points-table td { border: 1px solid #000; padding: 8px; font-size: 12px; text-align: left; }
+.loto-points-table th { background-color: #f1f5f9; text-align: center; font-weight: 700; }
+
+/* BADGES DE ENERGÍA */
+.badge-energy {
+  display: block;
+  text-align: center;
+  font-weight: 800;
+  font-size: 10px;
+  text-transform: uppercase;
+  padding: 3px;
+  border-radius: 3px;
+  color: white;
+}
+.energy-electrica { background-color: #eab308; color: black; } /* Amarillo Eléctrico */
+.energy-neumatica { background-color: #3b82f6; }            /* Azul Neumático */
+.energy-hidraulica { background-color: #1d4ed8; }           /* Azul Oscuro Hidráulico */
+.energy-termica { background-color: var(--accent-orange); }  /* Rojo/Naranja Térmico */
+.energy-quimica { background-color: #a855f7; }            /* Morado Químico */
+
+/* --- SOPORTE NATIVO PARA IMPRESIÓN Y EXPORTACIÓN A PDF --- */
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; }
+  .a4-preview-container { padding: 0; }
+  .a4-page {
+    width: 210mm;
+    height: 297mm;
+    padding: 10mm;
+    box-shadow: none;
+    margin: 0;
+    page-break-inside: avoid;
+  }
+}

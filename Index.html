@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cerámica Mayor - Generador de Fichas LOTO</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="corp-header no-print">
+    <div class="header-container">
+      <div class="logo-placeholder">CERÁMICA MAYOR</div>
+      <div class="header-title">
+        <h1>Generador de Fichas Maestras LOTO</h1>
+        <p>Dirección Técnica · Sistema de Gestión de Seguridad e Ingeniería</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-container no-print">
+    <section class="editor-panel">
+      <h2>1. Datos de la Máquina / Línea</h2>
+      <div class="form-group">
+        <label for="input-maquina">Nombre de la Máquina / Instalación:</label>
+        <input type="text" id="input-maquina" placeholder="Ej: Línea de Trinchado y Apilado">
+      </div>
+      <div class="form-group">
+        <label for="input-codigo">Código Documental (PR-DT-LOTO-XX):</label>
+        <input type="text" id="input-codigo" placeholder="Ej: PR-DT-LOTO-04">
+      </div>
+      <div class="form-group">
+        <label for="input-autor">Autor / Responsable Técnico:</label>
+        <input type="text" id="input-autor" placeholder="Ej: Alejandro Berenguer">
+      </div>
+
+      <div class="table-actions-header">
+        <h2>2. Puntos de Bloqueo y Consignación</h2>
+        <button type="button" class="btn btn-primary" onclick="addPointRow()">+ Añadir Punto</button>
+      </div>
+
+      <div class="table-responsive">
+        <table class="editor-table">
+          <thead>
+            <tr>
+              <th>Tipo Energía</th>
+              <th>Elemento de Corte</th>
+              <th>Ubicación Física</th>
+              <th style="width: 50px;">Acción</th>
+            </tr>
+          </thead>
+          <tbody id="editor-points-body">
+            </tbody>
+        </table>
+      </div>
+
+      <div class="action-footer">
+        <button type="button" class="btn btn-success btn-large" onclick="window.print()">
+          🖨️ Imprimir Ficha en A4 / Guardar PDF
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <div class="a4-preview-container">
+    <div class="a4-page" id="loto-card-view">
+      
+      <table class="loto-table-header">
+        <tr>
+          <td rowspan="2" class="td-logo" style="width: 25%;">
+            <div class="logo-text-bold">CERÁMICA<br>MAYOR</div>
+          </td>
+          <td class="td-title" style="width: 50%;">
+            <h2>FICHA DE CONSIGNACIÓN MAESTRA (LOTO)</h2>
+          </td>
+          <td class="td-meta" style="width: 25%;">
+            <strong>Código:</strong> <span id="view-codigo">-</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-subtitle">PROCEDIMIENTO DE PARADA SEGURA</td>
+          <td class="td-meta">
+            <strong>Fecha:</strong> <span id="view-fecha">-</span>
+          </td>
+        </tr>
+      </table>
+
+      <div class="loto-section-title">1. IDENTIFICACIÓN DEL EQUIPO / INSTALACIÓN</div>
+      <table class="loto-info-table">
+        <tr>
+          <td style="width: 20%;"><strong>Instalación:</strong></td>
+          <td style="width: 45%; font-weight: bold; color: #1e3a8a;" id="view-maquina">-</td>
+          <td style="width: 15%;"><strong>Elaborado:</strong></td>
+          <td style="width: 20%;" id="view-autor">-</td>
+        </tr>
+        <tr>
+          <td><strong>Normativa:</strong></td>
+          <td colspan="3">Real Decreto 1215/1997 · Protocolo LOTO de Planta Cerámica Mayor</td>
+        </tr>
+      </table>
+
+      <div class="loto-section-title">2. INSTRUCCIONES GENERALES DE SEGURIDAD</div>
+      <div class="loto-alert-box">
+        <p><strong>¡ADVERTENCIA OBLIGATORIA!:</strong> Antes de realizar cualquier intervención mecánica o eléctrica, es obligatorio cortar, bloquear y etiquetar cada una de las fuentes de energía listadas a continuación. Comprobar la ausencia de energía (Tensión cero, presión residual cero, enfriamiento térmico) antes de retirar las protecciones.</p>
+      </div>
+
+      <div class="loto-section-title">3. SECUENCIA OBLIGATORIA DE BLOQUEO Y CONSIGNACIÓN</div>
+      <table class="loto-points-table">
+        <thead>
+          <tr>
+            <th style="width: 8%;">ORDEN</th>
+            <th style="width: 22%;">TIPO DE ENERGÍA</th>
+            <th style="width: 35%;">ELEMENTO DE CORTE / DISPOSITIVO</th>
+            <th style="width: 35%;">UBICACIÓN EN PLANTA</th>
+          </tr>
+        </thead>
+        <tbody id="view-points-body">
+          </tbody>
+      </table>
+
+      <div class="loto-footer-signatures">
+        <table style="width: 100%; border: none; margin-top: 30px;">
+          <tr style="border: none;">
+            <td style="width: 50%; border: none; text-align: center;">
+              <div style="border-top: 1px solid #475569; width: 80%; margin: 0 auto; padding-top: 5px; font-size: 11px;">
+                Firma Director Técnico / Responsable PRL
+              </div>
+            </td>
+            <td style="width: 50%; border: none; text-align: center;">
+              <div style="border-top: 1px solid #475569; width: 80%; margin: 0 auto; padding-top: 5px; font-size: 11px;">
+                Firma Encargado de Mantenimiento / Operario Autorizado
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
